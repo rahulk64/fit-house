@@ -30,7 +30,7 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 	ListView leaderboard;
 
 	String names [] = {"John", "Abby", "Rahul", "Grant", "Emily"};
-	int scores [] = {42, 42, 42, 42, 42};
+	double scores [] = {42.0, 42.0, 42.0, 42.0, 42.0};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -56,9 +56,9 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 	class LeaderboardPosition implements Comparable<LeaderboardPosition>
 	{
 		String name;
-		int score;
+		double score;
 
-		LeaderboardPosition (int score, String name)
+		LeaderboardPosition (double score, String name)
 		{
 			this.name = name;
 			this.score = score;
@@ -67,7 +67,7 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 		@Override
 		public int compareTo (LeaderboardPosition other)
 		{
-			return other.score - this.score;
+			return new Double(other.score).compareTo(new Double (this.score));
 		}
 	}
 
@@ -76,7 +76,7 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 		Context context;
 		ArrayList<LeaderboardPosition> leaderboard;
 
-		LeaderboardAdapter (Context c, String name [], int score [])
+		LeaderboardAdapter (Context c, String name [], double score [])
 		{
 			super (c, R.layout.leaderboard_row, name);
 			leaderboard = new ArrayList<LeaderboardPosition>();
@@ -84,6 +84,7 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 			{
 				leaderboard.add(new LeaderboardPosition(score [i], name [i]));
 			}
+
 			Collections.sort(leaderboard);
 
 			this.context = c;
@@ -102,7 +103,7 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 
 			rankView.setText(position);
 			nameView.setText(leaderboard.get(position).name);
-			scoreView.setText(leaderboard.get(position).score);
+			scoreView.setText("" + leaderboard.get(position).score);
 
 			return row;
 		}
