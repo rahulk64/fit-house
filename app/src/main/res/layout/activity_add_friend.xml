@@ -49,7 +49,7 @@
         android:layout_y="199dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Username"
+        android:hint="Username"
         tools:layout_editor_absoluteX="50dp"
         tools:layout_editor_absoluteY="556dp" />
 
@@ -62,7 +62,7 @@
         android:layout_y="265dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Email"
+        android:hint="Email"
         tools:layout_editor_absoluteX="50dp"
         tools:layout_editor_absoluteY="556dp" />
 
@@ -75,7 +75,7 @@
         android:layout_y="135dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Name"
         tools:layout_editor_absoluteX="50dp"
         tools:layout_editor_absoluteY="556dp" />
 

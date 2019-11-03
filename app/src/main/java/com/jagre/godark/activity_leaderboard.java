@@ -30,7 +30,7 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 	ListView leaderboard;
 
 	String names [] = {"John", "Abby", "Rahul", "Grant", "Emily", ""};
-	double scores [] = {42.0, 42.0, 42.0, 42.0, 42.0};
+	double scores [] = {42.0, 44.0, 9.0, 68.0, 42.0};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -142,10 +142,6 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 		} else if (id == R.id.nav_slideshow) {
 
 		} else if (id == R.id.nav_tools) {
-
-		} else if (id == R.id.nav_share) {
-
-		} else if (id == R.id.nav_send) {
 
 		}
 

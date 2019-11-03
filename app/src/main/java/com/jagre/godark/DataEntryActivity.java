@@ -13,7 +13,7 @@ public class DataEntryActivity extends AppCompatActivity {
     Button cancelButton;
     EditText mEdit1;
     EditText mEdit2;
-    public static int myScore = 2835;
+    public static double myScore = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +28,8 @@ public class DataEntryActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 try {
-                    myScore += Integer.parseInt(mEdit1.getText().toString());
-                    myScore += Integer.parseInt(mEdit1.getText().toString());
+                    myScore += Double.parseDouble(mEdit1.getText().toString());
+                    myScore += Double.parseDouble(mEdit2.getText().toString());
                 }
                 catch (Exception e){
                     finish();
