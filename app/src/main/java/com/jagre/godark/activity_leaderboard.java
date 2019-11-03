@@ -106,7 +106,7 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 			TextView nameView = row.findViewById(R.id.name);
 			TextView scoreView = row.findViewById(R.id.score);
 
-			rankView.setText(""+position);
+			rankView.setText(""+(position+1));
 			nameView.setText(leaderboard.get(position).name);
 			scoreView.setText("" + leaderboard.get(position).score);
 
