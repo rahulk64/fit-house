@@ -22,11 +22,13 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class activity_leaderboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
 	ListView leaderboard;
 
-	int ranks [] = {1, 2, 3, 4, 5};
 	String names [] = {"John", "Abby", "Rahul", "Grant", "Emily"};
 	int scores [] = {42, 42, 42, 42, 42};
 
@@ -48,23 +50,43 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 
 		leaderboard = findViewById (R.id.leaderboard_list);
 
-		LeaderboardAdapter adapter = new LeaderboardAdapter(this, ranks, names, scores);
+		LeaderboardAdapter adapter = new LeaderboardAdapter(this, names, scores);
+	}
+
+	class LeaderboardPosition implements Comparable<LeaderboardPosition>
+	{
+		String name;
+		int score;
+
+		LeaderboardPosition (int score, String name)
+		{
+			this.name = name;
+			this.score = score;
+		}
+
+		@Override
+		public int compareTo (LeaderboardPosition other)
+		{
+			return other.score - this.score;
+		}
 	}
 
 	class LeaderboardAdapter extends ArrayAdapter<String>
 	{
 		Context context;
-		int rank [];
-		String name [];
-		int score [];
+		ArrayList<LeaderboardPosition> leaderboard;
 
-		LeaderboardAdapter (Context c, int rank [], String name [], int score [])
+		LeaderboardAdapter (Context c, String name [], int score [])
 		{
 			super (c, R.layout.leaderboard_row, name);
+			leaderboard = new ArrayList<LeaderboardPosition>();
+			for (int i = 0; i < name.length; i++)
+			{
+				leaderboard.add(new LeaderboardPosition(score [i], name [i]));
+			}
+			Collections.sort(leaderboard);
+
 			this.context = c;
-			this.rank = rank;
-			this.name = name;
-			this.score = score;
 		}
 
 		@NonNull
@@ -78,9 +100,9 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 			TextView nameView = row.findViewById(R.id.name);
 			TextView scoreView = row.findViewById(R.id.score);
 
-			rankView.setText(rank [position]);
-			nameView.setText(name [position]);
-			scoreView.setText(score [position]);
+			rankView.setText(position);
+			nameView.setText(leaderboard.get(position).name);
+			scoreView.setText(leaderboard.get(position).score);
 
 			return row;
 		}
