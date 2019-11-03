@@ -84,6 +84,8 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 			{
 				leaderboard.add(new LeaderboardPosition(score [i], name [i]));
 			}
+			leaderboard.add (new LeaderboardPosition(DataEntryActivity.myScore, "Me"));
+
 
 			Collections.sort(leaderboard);
 
