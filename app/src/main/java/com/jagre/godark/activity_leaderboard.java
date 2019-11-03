@@ -29,7 +29,7 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 {
 	ListView leaderboard;
 
-	String names [] = {"John", "Abby", "Rahul", "Grant", "Emily"};
+	String names [] = {"John", "Abby", "Rahul", "Grant", "Emily", ""};
 	double scores [] = {42.0, 42.0, 42.0, 42.0, 42.0};
 
 	@Override
@@ -70,7 +70,7 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 		@Override
 		public int compareTo (LeaderboardPosition other)
 		{
-			return new Double(other.score).compareTo(new Double (this.score));
+			return new Double(this.score).compareTo(new Double (other.score));
 		}
 	}
 
@@ -83,11 +83,13 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 		{
 			super (c, R.layout.leaderboard_row, name);
 			leaderboard = new ArrayList<LeaderboardPosition>();
-			for (int i = 0; i < name.length; i++)
+			for (int i = 0; i < score.length; i++)
 			{
 				leaderboard.add(new LeaderboardPosition(score [i], name [i]));
 			}
-//			leaderboard.add (new LeaderboardPosition(DataEntryActivity.myScore, "Me"));
+			leaderboard.add (new LeaderboardPosition(DataEntryActivity.myScore, "Me"));
+
+//			System.out.println("SIZEEEEE" + leaderboard.size());
 
 
 			Collections.sort(leaderboard);
