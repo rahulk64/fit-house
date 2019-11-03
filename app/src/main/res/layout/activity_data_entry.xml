@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DataEntryActivity">
+
+    <Button
+        android:id="@+id/runOptionsBtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="155dp"
+        android:layout_height="54dp"
+        android:text="Add"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="640dp" />
+
+    <Button
+        android:id="@+id/cancelOptionsBtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="160dp"
+        android:layout_height="56dp"
+        android:text="cancel"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="638dp" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Water (G)"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="556dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Electricity(kWh)"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="251dp" />
+</android.support.constraint.ConstraintLayout>
