@@ -22,17 +22,18 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class activity_leaderboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
 	ListView leaderboard;
 
-	int ranks [] = {1, 2, 3, 4, 5};
 	String names [] = {"John", "Abby", "Rahul", "Grant", "Emily"};
-	int scores [] = {42, 42, 42, 42, 42};
+	double scores [] = {42.0, 42.0, 42.0, 42.0, 42.0};
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState)
-	{
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_leaderboard);
 		Toolbar toolbar = findViewById(R.id.toolbar);
@@ -46,27 +47,52 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 //		navigationView.setNavigationItemSelectedListener(this);
 
 
-		leaderboard = findViewById (R.id.leaderboard_list);
+		leaderboard = findViewById(R.id.leaderboard_list);
 
-		LeaderboardAdapter adapter = new LeaderboardAdapter(this, ranks, names, scores);
+
+		LeaderboardAdapter adapter = new LeaderboardAdapter(this, names, scores);
 		leaderboard.setAdapter(adapter);
 		adapter.notifyDataSetChanged();
+	}
+
+
+	class LeaderboardPosition implements Comparable<LeaderboardPosition>
+	{
+		String name;
+		double score;
+
+		LeaderboardPosition (double score, String name)
+		{
+			this.name = name;
+			this.score = score;
+		}
+
+		@Override
+		public int compareTo (LeaderboardPosition other)
+		{
+			return new Double(other.score).compareTo(new Double (this.score));
+		}
 	}
 
 	class LeaderboardAdapter extends ArrayAdapter<String>
 	{
 		Context context;
-		int rank [];
-		String name [];
-		int score [];
+		ArrayList<LeaderboardPosition> leaderboard;
 
-		LeaderboardAdapter (Context c, int rank [], String name [], int score [])
+		LeaderboardAdapter (Context c, String name [], double score [])
 		{
 			super (c, R.layout.leaderboard_row, name);
+			leaderboard = new ArrayList<LeaderboardPosition>();
+			for (int i = 0; i < name.length; i++)
+			{
+				leaderboard.add(new LeaderboardPosition(score [i], name [i]));
+			}
+//			leaderboard.add (new LeaderboardPosition(DataEntryActivity.myScore, "Me"));
+
+
+			Collections.sort(leaderboard);
+
 			this.context = c;
-			this.rank = rank;
-			this.name = name;
-			this.score = score;
 		}
 
 		@NonNull
@@ -80,11 +106,9 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 			TextView nameView = row.findViewById(R.id.name);
 			TextView scoreView = row.findViewById(R.id.score);
 
-			if(rankView == null) System.out.println("IM A NULLPTRS");
-
-			rankView.setText(Integer.toString(rank [position]));
-			nameView.setText(name [position]);
-			scoreView.setText(Integer.toString(score [position]));
+			rankView.setText(""+position);
+			nameView.setText(leaderboard.get(position).name);
+			scoreView.setText("" + leaderboard.get(position).score);
 
 			return row;
 		}
