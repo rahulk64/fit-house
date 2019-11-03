@@ -36,19 +36,21 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_leaderboard);
 		Toolbar toolbar = findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
-		DrawerLayout drawer = findViewById(R.id.drawer_layout);
-		NavigationView navigationView = findViewById(R.id.nav_view);
-		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-				this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-		drawer.addDrawerListener(toggle);
-		toggle.syncState();
-		navigationView.setNavigationItemSelectedListener(this);
+//		setSupportActionBar(toolbar);
+//		DrawerLayout drawer = findViewById(R.id.drawer_layout);
+//		NavigationView navigationView = findViewById(R.id.nav_view);
+//		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//				this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//		drawer.addDrawerListener(toggle);
+//		toggle.syncState();
+//		navigationView.setNavigationItemSelectedListener(this);
 
 
 		leaderboard = findViewById (R.id.leaderboard_list);
 
 		LeaderboardAdapter adapter = new LeaderboardAdapter(this, ranks, names, scores);
+		leaderboard.setAdapter(adapter);
+		adapter.notifyDataSetChanged();
 	}
 
 	class LeaderboardAdapter extends ArrayAdapter<String>
@@ -78,9 +80,11 @@ public class activity_leaderboard extends AppCompatActivity implements Navigatio
 			TextView nameView = row.findViewById(R.id.name);
 			TextView scoreView = row.findViewById(R.id.score);
 
-			rankView.setText(rank [position]);
+			if(rankView == null) System.out.println("IM A NULLPTRS");
+
+			rankView.setText(Integer.toString(rank [position]));
 			nameView.setText(name [position]);
-			scoreView.setText(score [position]);
+			scoreView.setText(Integer.toString(score [position]));
 
 			return row;
 		}

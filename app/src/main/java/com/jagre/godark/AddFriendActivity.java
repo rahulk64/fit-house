@@ -27,7 +27,7 @@ public class AddFriendActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent optionsIntent = new Intent(AddFriendActivity.this, FriendsActivity.class);
-                optionsIntent.putExtra("new_friend", mEdit.getText());
+                optionsIntent.putExtra("new_friend", mEdit.getText().toString());
                 startActivity(optionsIntent);
 
             }

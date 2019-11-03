@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
@@ -13,11 +13,13 @@
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
 
+        android:layout_x="37dp"
+        android:layout_y="208dp"
         android:hint="@string/prompt_email"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
@@ -27,12 +29,14 @@
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
 
+        android:layout_x="36dp"
+        android:layout_y="284dp"
         android:hint="@string/prompt_password"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
@@ -51,14 +55,15 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="64dp"
+        android:layout_x="106dp"
+        android:layout_y="461dp"
         android:enabled="false"
         android:text="@string/action_sign_in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.2"
-        />
+        app:layout_constraintVertical_bias="0.2" />
 
     <ProgressBar
         android:id="@+id/loading"
@@ -80,10 +85,11 @@
         android:id="@+id/textView2"
         android:layout_width="120dp"
         android:layout_height="80dp"
+        android:layout_x="122dp"
+        android:layout_y="46dp"
         android:text="Login"
-        tools:layout_editor_absoluteX="125dp"
-        tools:layout_editor_absoluteY="101dp"
-        android:textSize="45dp"
         android:textColor="@color/colorPrimary"
-        />
-</android.support.constraint.ConstraintLayout>
+        android:textSize="45dp"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="101dp" />
+</AbsoluteLayout>
