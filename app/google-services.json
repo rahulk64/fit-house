@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "144071143161",
+    "firebase_url": "https://godark-5f3ad.firebaseio.com",
+    "project_id": "godark-5f3ad",
+    "storage_bucket": "godark-5f3ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144071143161:android:26c254c64f20c4371dbc28",
+        "android_client_info": {
+          "package_name": "com.Jarge.CodenameGoDark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144071143161-3rgue175hfmfiq6ukrkutpdi4j4jpptb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-kPYIk2eN0EaMi40pVu5hMdcbwL1lUMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144071143161-3rgue175hfmfiq6ukrkutpdi4j4jpptb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144071143161:android:0bf7bad963eb7b681dbc28",
+        "android_client_info": {
+          "package_name": "com.jagre.godark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144071143161-3rgue175hfmfiq6ukrkutpdi4j4jpptb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-kPYIk2eN0EaMi40pVu5hMdcbwL1lUMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144071143161-3rgue175hfmfiq6ukrkutpdi4j4jpptb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
