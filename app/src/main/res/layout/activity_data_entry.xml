@@ -4,17 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddFriendActivity">
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="bottom"
-        android:layout_marginTop="6dp">
-
-    </RelativeLayout>
+    tools:context=".DataEntryActivity">
 
     <Button
         android:id="@+id/runOptionsBtn"
@@ -35,15 +25,22 @@
         tools:layout_editor_absoluteY="638dp" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Water (G)"
         tools:layout_editor_absoluteX="50dp"
         tools:layout_editor_absoluteY="556dp" />
 
-
-
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Electricity(kWh)"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="251dp" />
 </android.support.constraint.ConstraintLayout>
