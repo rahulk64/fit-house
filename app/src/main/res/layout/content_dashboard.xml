@@ -8,4 +8,39 @@
     tools:context=".DashboardActivity"
     tools:showIn="@layout/app_bar_dashboard">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="340dp"
+        android:layout_height="186dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/verynice"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4 Privet Drive, Little Whinging, Surrey, England"
+        android:textSize="17sp"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="224dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Owner: Jarge Skraggs"
+        android:textSize="17sp"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="247dp" />
+
 </android.support.constraint.ConstraintLayout>
